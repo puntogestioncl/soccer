@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/inicio"/>
+
+        <item
+            android:id="@+id/nav_laliga"
+            android:icon="@drawable/ic_laliga"
+            android:title="@string/menu_laliga" />
+        <item
+            android:id="@+id/nav_premierleague"
+            android:icon="@drawable/ic_premierleague"
+            android:title="@string/menu_premierleague" />
+        <item
+            android:id="@+id/nav_ligaa"
+            android:icon="@drawable/ic_seriea"
+            android:title="@string/menu_seriea" />
+        <item
+            android:id="@+id/nav_bundesliga"
+            android:icon="@drawable/ic_bundesliga"
+            android:title="@string/menu_bundesliga" />
+        <item
+            android:id="@+id/nav_ligue1"
+            android:icon="@drawable/ic_ligue1"
+            android:title="@string/menu_ligue1" />
+        <item
+            android:id="@+id/nav_primeiraliga"
+            android:icon="@drawable/ic_liganos"
+            android:title="@string/menu_primeiraliga" />
+        <item
+            android:id="@+id/nav_eredivisie"
+            android:icon="@drawable/ic_eredivisie"
+            android:title="@string/menu_eredivisie" />
+
+    </group>
+</menu>

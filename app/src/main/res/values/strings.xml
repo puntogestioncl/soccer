@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Soccer Leagues Statistics</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">@string/app_name</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_laliga">LA LIGA</string>
+    <string name="menu_premierleague">PREMIER LEAGUE</string>
+    <string name="menu_seriea">SERIE A</string>
+    <string name="menu_bundesliga">BUNDESLIGA</string>
+    <string name="menu_ligue1">LIGUE 1</string>
+    <string name="menu_primeiraliga">PRIMEIRA LIGA</string>
+    <string name="menu_eredivisie">EREDIVISIE</string>
+    <string name="inicio">INICIO</string>
+</resources>
