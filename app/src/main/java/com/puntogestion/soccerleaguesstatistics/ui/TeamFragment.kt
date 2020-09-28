@@ -12,6 +12,8 @@ import androidx.lifecycle.Observer
 import com.puntogestion.soccerleaguesstatistics.R
 import com.puntogestion.soccerleaguesstatistics.ui.laliga.LaLigaViewModel
 import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
+import com.puntogestion.soccerleaguesstatistics.MainActivity
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.fragment_team.*
 
 class TeamFragment : Fragment() {
@@ -41,6 +43,7 @@ class TeamFragment : Fragment() {
         viewModel.selected.observe(viewLifecycleOwner, Observer {
             GlideToVectorYou.init().with(view.context).load(Uri.parse(it.crestUrl), imageViewLogo)
             textViewTitle.text = it.name
+            (activity as MainActivity).supportActionBar?.title = it.name
             textViewFounded.text = "Fundado : ${it.founded.toString()}"
             textViewNameEstadio.text = it.venue
             textViewSiteWeb.text = it.website

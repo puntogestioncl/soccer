@@ -10,7 +10,12 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.bumptech.glide.Glide
+import com.puntogestion.soccerleaguesstatistics.MainActivity
 import com.puntogestion.soccerleaguesstatistics.R
+import com.puntogestion.soccerleaguesstatistics.util.logo
+import com.puntogestion.soccerleaguesstatistics.util.title
+import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.la_liga_fragment.*
 
 class LaLigaFragment : Fragment() {
@@ -28,15 +33,21 @@ class LaLigaFragment : Fragment() {
     ): View? {
         //Log.d("Api***", "${arguments!!.getInt("idLiga")}")
         idLiga = arguments!!.getInt("idLiga")
+
+        val actionBar =  (activity as MainActivity).supportActionBar
+        actionBar?.title = title(idLiga, context!!)
+
         return inflater.inflate(R.layout.la_liga_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        var adaptador = LaLigaAdapter(mutableListOf())
+        val adaptador = LaLigaAdapter(mutableListOf())
         rLaLiga.layoutManager = GridLayoutManager(context, 2)
         rLaLiga.adapter = adaptador
+
+        Glide.with(imageViewLogoLigue.context).load(logo(idLiga)).into(imageViewLogoLigue)
 
         viewModel.getTeamAllLiga(idLiga).observe(viewLifecycleOwner, Observer {
             adaptador.updateItems(it)
@@ -45,7 +56,7 @@ class LaLigaFragment : Fragment() {
         adaptador.team.observe(viewLifecycleOwner, Observer {
             viewModel.select(it)
             Log.d("Api---", "$it")
-            view?.findNavController()?.navigate(R.id.teamFragment)
+            view?.findNavController()?.navigate(R.id.action_nav_laliga_to_teamFragment )
         })
     }
 }

@@ -7,7 +7,8 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "players_team")
 data class PlayersEntity(
     val countryOfBirth: String,
-    val dateOfBirth: String,
+    @Nullable
+    val dateOfBirth: String?,
     @PrimaryKey
     var id: Int,
     val id_team: Int,

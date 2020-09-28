@@ -7,7 +7,7 @@ import com.puntogestion.soccerleaguesstatistics.db.remote.Interceptor as Interce
 
 class RetrofitClient {
     companion object{
-        private const val BASE_URL = "http://api.football-data.org/"
+        private const val BASE_URL = "https://api.football-data.org/"
         fun retrofitInstance(): SoccerApi{
             var interceptor = Interceptor()
             var cliente = OkHttpClient.Builder().addInterceptor(interceptor).build()

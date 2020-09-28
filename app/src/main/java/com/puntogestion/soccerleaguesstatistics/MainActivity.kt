@@ -2,6 +2,8 @@ package com.puntogestion.soccerleaguesstatistics
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
@@ -11,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.os.bundleOf
 import androidx.core.view.GravityCompat
+import androidx.navigation.NavOptions
 import androidx.navigation.ui.*
 
 
@@ -24,11 +27,6 @@ class MainActivity : AppCompatActivity() {
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
 
-        val fab: FloatingActionButton = findViewById(R.id.fab)
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment)
@@ -43,31 +41,31 @@ class MainActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.nav_laliga -> {
                     val bundle = bundleOf(Pair("idLiga", 2014))
-                    navController.navigate(R.id.nav_laliga, bundle)
+                    navController.navigate(R.id.action_nav_home_to_nav_laliga, bundle)
                 }
                 R.id.nav_bundesliga -> {
                     val bundle = bundleOf(Pair("idLiga", 2002))
-                    navController.navigate(R.id.nav_laliga, bundle)
+                    navController.navigate(R.id.action_nav_home_to_nav_laliga, bundle)
                 }
                 R.id.nav_eredivisie -> {
                     val bundle = bundleOf(Pair("idLiga", 2003))
-                    navController.navigate(R.id.nav_laliga, bundle)
+                    navController.navigate(R.id.action_nav_home_to_nav_laliga, bundle)
                 }
                 R.id.nav_ligue1 -> {
                     val bundle = bundleOf(Pair("idLiga", 2015))
-                    navController.navigate(R.id.nav_laliga, bundle)
+                    navController.navigate(R.id.action_nav_home_to_nav_laliga, bundle)
                 }
                 R.id.nav_primeiraliga -> {
                     val bundle = bundleOf(Pair("idLiga", 2017))
-                    navController.navigate(R.id.nav_laliga, bundle)
+                    navController.navigate(R.id.action_nav_home_to_nav_laliga, bundle)
                 }
                 R.id.nav_ligaa -> {
                     val bundle = bundleOf(Pair("idLiga", 2019))
-                    navController.navigate(R.id.nav_laliga, bundle)
+                    navController.navigate(R.id.action_nav_home_to_nav_laliga, bundle)
                 }
                 R.id.nav_premierleague -> {
                     val bundle = bundleOf(Pair("idLiga", 2021))
-                    navController.navigate(R.id.nav_laliga, bundle)
+                    navController.navigate(R.id.action_nav_home_to_nav_laliga, bundle)
                 }
                 else -> true
             }
@@ -91,5 +89,17 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId){
+            R.id.action_calendar -> {
+                Toast.makeText(this, "Calendar", Toast.LENGTH_LONG).show()
+            }
+
+            else -> true
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

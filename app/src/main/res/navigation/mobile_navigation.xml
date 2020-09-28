@@ -11,7 +11,11 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_nav_home_to_nav_laliga"
-            app:destination="@id/nav_laliga" />
+            app:destination="@id/nav_laliga"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
     </fragment>
     <fragment
         android:id="@+id/nav_laliga"
@@ -20,7 +24,11 @@
         tools:layout="@layout/la_liga_fragment" >
         <action
             android:id="@+id/action_nav_laliga_to_teamFragment"
-            app:destination="@id/teamFragment" />
+            app:destination="@id/teamFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
         <argument
             android:name="idLiga"
             app:argType="integer"
@@ -31,4 +39,9 @@
         android:name="com.puntogestion.soccerleaguesstatistics.ui.TeamFragment"
         android:label="fragment_team"
         tools:layout="@layout/fragment_team" />
+    <fragment
+        android:id="@+id/liguesFragment"
+        android:name="com.puntogestion.soccerleaguesstatistics.ui.laliga.LiguesFragment"
+        android:label="fragment_ligues"
+        tools:layout="@layout/fragment_ligues" />
 </navigation>

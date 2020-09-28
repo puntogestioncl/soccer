@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "331559427912",
+    "firebase_url": "https://soccer-leagues-statistics.firebaseio.com",
+    "project_id": "soccer-leagues-statistics",
+    "storage_bucket": "soccer-leagues-statistics.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331559427912:android:f99c58336f225ee5ae5d7d",
+        "android_client_info": {
+          "package_name": "com.puntogestion.soccerleaguesstatistics"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "331559427912-5s1mdan5copek0aula4ndpeeobnbktru.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA19i3j1RKHdl-jVMtS99qLW3Snlcd1oPk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "331559427912-5s1mdan5copek0aula4ndpeeobnbktru.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

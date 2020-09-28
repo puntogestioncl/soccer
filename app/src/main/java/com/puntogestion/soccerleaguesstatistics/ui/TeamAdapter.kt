@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.puntogestion.soccerleaguesstatistics.R
 import com.puntogestion.soccerleaguesstatistics.db.local.PlayersEntity
+import com.puntogestion.soccerleaguesstatistics.util.dateFormat
 import kotlinx.android.synthetic.main.play_position_layout.view.*
 
 class TeamAdapter(private var listPlayersEntity: MutableList<PlayersEntity>): RecyclerView.Adapter<TeamAdapter.TeamViewHolder>() {
@@ -22,9 +23,8 @@ class TeamAdapter(private var listPlayersEntity: MutableList<PlayersEntity>): Re
     override fun onBindViewHolder(holder: TeamViewHolder, position: Int) {
         holder.textName.text = listPlayersEntity.get(position).name
         holder.textNacionality.text = listPlayersEntity.get(position).nationality
-        holder.textDateOfBirth.text = listPlayersEntity.get(position).dateOfBirth
-        var date = listPlayersEntity.get(position).dateOfBirth
-        date.replace("T00:00:00Z", "",true)
+        holder.textDateOfBirth.text =
+            listPlayersEntity.get(position).dateOfBirth?.let { dateFormat(it, "dd-MM-yyyy") }
         when(listPlayersEntity.get(position).position){
                 null -> holder.textPosition.text = listPlayersEntity.get(position).role
                 else -> holder.textPosition.text = listPlayersEntity.get(position).position

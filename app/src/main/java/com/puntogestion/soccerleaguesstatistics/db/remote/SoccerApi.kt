@@ -14,4 +14,7 @@ interface SoccerApi {
 
     @GET("/v2/teams/{id}")
     fun playersTeam(@Path("id") id: Int ): Call<PlayersTeam>
+
+    @GET("/v2/matches")
+    fun matchesDay() : Call<MatchesDay>
 }

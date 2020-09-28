@@ -10,7 +10,7 @@
     tools:context=".ui.laliga.LaLigaFragment">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageViewLogoLigue"
         android:layout_width="match_parent"
         android:layout_height="95dp"
         android:layout_marginBottom="16dp"

@@ -4,12 +4,14 @@ import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewAnimationUtils
 import android.view.ViewGroup
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.puntogestion.soccerleaguesstatistics.R
 import com.puntogestion.soccerleaguesstatistics.db.local.TeamEntity
 import com.github.twocoffeesoneteam.glidetovectoryou.GlideToVectorYou
+import com.puntogestion.soccerleaguesstatistics.util.circularAnimation
 import kotlinx.android.synthetic.main.teams_layaout.view.*
 
 class LaLigaAdapter(private var teamsDataSet: MutableList<TeamEntity> ): RecyclerView.Adapter<LaLigaAdapter.LaLigaViewHolder>() {
@@ -45,4 +47,9 @@ class LaLigaAdapter(private var teamsDataSet: MutableList<TeamEntity> ): Recycle
         val textName = itemView.textViewNameTeam
         var imageView = itemView.imageViewLogo
     }
+
+    /*override fun onViewAttachedToWindow(holder: LaLigaViewHolder) {
+        super.onViewAttachedToWindow(holder)
+        circularAnimation(holder.itemView)
+    }*/
 }
